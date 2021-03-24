@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        ::after {
+            margin: 0%;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: 'Pangolin',
+                cursive;
+        }
+
+        html {
+            font-size: 65.2%;
+        }
+
+        :root {
+            --bg-color: #2d3436;
+            --center-box-bg-color: #b9b9b9;
+            --href-text-color: #cfcfcf;
+            --href-hover-text-color: #003761;
+            --href-slide-text-color: #dfe6e9;
+        }
+
+        .banner {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-color);
+            display: -ms-grid;
+            display: grid;
+            place-items: center;
+        }
+
+        .banner .center {
+            width: 50vw;
+            height: 50vh;
+            z-index: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .banner .center a {
+            text-decoration: none;
+            overflow: hidden;
+            z-index: 1;
+            text-transform: uppercase;
+            color: var(--href-text-color);
+            font-size: 5rem;
+            letter-spacing: .1rem;
+            font-weight: bold;
+            padding: 2.5rem 2.5rem;
+            position: relative;
+            border: 0.2rem solid var(--href-hover-text-color);
+        }
+
+        .banner .center a::before {
+            content: " ";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            -webkit-transition: 0.5s all linear;
+            transition: 0.5s all linear;
+            border: none;
+            background-color: var(--href-slide-text-color);
+            -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+        }
+
+        .banner .center a:hover::before {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+
+        .banner .center a:hover {
+            color: var(--href-hover-text-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="center">
+            <a href="#">Hover me</a>
+        </div>
+    </div>
+</body>
+
+</html>
